@@ -1,3 +1,4 @@
 FROM busybox
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY docker_entrypoint.sh /docker_entrypoint.sh
+RUN chmod +x /docker_entrypoint.sh
+ENTRYPOINT ["/docker_entrypoint.sh"]
