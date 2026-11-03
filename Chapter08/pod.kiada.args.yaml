@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: kiada
-    image: luksa/kiada:0.4
+    image: muhammadhashim24/kiada:0.4
     args: ["--listen-port", "9090"]
 #   Alternative notation:
 #     args:

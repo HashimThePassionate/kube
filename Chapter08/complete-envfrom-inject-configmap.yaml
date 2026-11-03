@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kiada
+spec:
+  containers:
+  - name: kiada
+    image: muhammadhashim24/kiada:0.4
+    envFrom:
+    - configMapRef:
+        name: kiada-config
+        optional: true
+    ports:
+    - name: http
+      containerPort: 8080

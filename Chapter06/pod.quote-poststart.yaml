@@ -4,19 +4,31 @@ metadata:
   name: quote-poststart
 spec:
   containers:
-  - name: nginx
-    image: nginx:alpine
-    ports:
-    - name: http
-      containerPort: 80
-    lifecycle:
-      postStart:
-        exec:
-          command:
-          - sh
-          - -c
-          - |
-            apk add fortune && \
-            curl -O https://luksa.github.io/kiada/book-quotes.txt && \
-            curl -O https://luksa.github.io/kiada/book-quotes.txt.dat && \
-            fortune book-quotes.txt > /usr/share/nginx/html/quote
+    - name: nginx
+      image: nginx:alpine
+      ports:
+        - name: http
+          containerPort: 80
+      lifecycle:
+        postStart:
+          exec:
+            command:
+              - sh
+              - -c
+              - |
+                apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community fortune util-linux && \
+                cat << 'EOF' > /tmp/book-quotes.txt
+                It is not that I'm so smart, but I stay with the questions much longer.
+                -- Albert Einstein
+                %
+                The Kubernetes container lifecycle hooks make automation seamless!
+                -- Kiada Guide
+                %
+                Containers do not virtualize the hardware, they virtualize the operating system.
+                -- Cloud Native Proverb
+                %
+                Simplicity is prerequisite for reliability.
+                -- Edsger W. Dijkstra
+                EOF
+                strfile /tmp/book-quotes.txt /tmp/book-quotes.txt.dat && \
+                fortune /tmp/book-quotes.txt > /usr/share/nginx/html/quote
