@@ -1,7 +1,7 @@
 -include Makefile.overrides
 -include ../../env
 
-IMAGE ?= quiz-api:0.1
+IMAGE ?= muhammadhashim24/quiz-api:0.1
 FULL_IMAGE_TAG = "$(PREFIX)$(IMAGE)"
 
 PLATFORM=linux
