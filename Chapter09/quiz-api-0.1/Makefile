@@ -2,7 +2,7 @@
 -include ../../env
 
 IMAGE ?= muhammadhashim24/quiz-api:0.1
-FULL_IMAGE_TAG = "$(PREFIX)$(IMAGE)"
+FULL_IMAGE_TAG = "$(IMAGE)"
 
 PLATFORM=linux
 

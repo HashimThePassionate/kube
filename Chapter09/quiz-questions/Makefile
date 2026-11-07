@@ -1,8 +1,8 @@
 -include Makefile.overrides
 -include ../../env
 
-IMAGE ?= quiz-questions:latest
-FULL_IMAGE_TAG = "$(PREFIX)$(IMAGE)"
+IMAGE ?= muhammadhashim24/quiz-questions:latest
+FULL_IMAGE_TAG = "$(IMAGE)"
 
 all: push
 

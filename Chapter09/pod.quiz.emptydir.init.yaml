@@ -10,7 +10,7 @@ spec:
     emptyDir: {}
   initContainers:
   - name: installer
-    image: luksa/quiz-initdb-script-installer:0.1
+    image: muhammadhashim24/quiz-initdb-script-installer:0.1
     imagePullPolicy: IfNotPresent
     volumeMounts:
     - name: initdb
