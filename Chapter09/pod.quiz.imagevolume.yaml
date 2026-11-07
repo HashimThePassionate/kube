@@ -6,7 +6,7 @@ spec:
   volumes:
   - name: initdb
     image:
-      reference: luksa/quiz-questions:latest
+      reference: muhammadhashim24v/quiz-questions:latest
       pullPolicy: Always
   - name: quiz-data
     emptyDir: {}

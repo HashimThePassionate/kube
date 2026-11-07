@@ -24,7 +24,7 @@ spec:
             mode: 0640
   containers:
   - name: kiada
-    image: luksa/kiada:0.4
+    image: muhammadhashim24/kiada:0.4
     env:
     - name: POD_NAME
       valueFrom:

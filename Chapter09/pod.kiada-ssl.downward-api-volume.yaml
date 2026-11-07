@@ -24,7 +24,7 @@ spec:
   - name: metadata
   containers:
   - name: kiada
-    image: luksa/kiada:0.4
+    image: muhammadhashim24/kiada:0.4
     env:
     - name: POD_NAME
       valueFrom:
