@@ -9,7 +9,7 @@ spec:
       claimName: quiz-data
   containers:
   - name: quiz-api
-    image: luksa/quiz-api:0.1
+    image: muhammadhashim24/quiz-api:0.1
     ports:
     - name: http
       containerPort: 8080

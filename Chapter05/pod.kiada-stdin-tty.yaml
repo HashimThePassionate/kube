@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: kiada
-    image: luksa/kiada:0.2
+    image: muhammadhashim24/kiada:0.2
     imagePullPolicy: IfNotPresent
     stdin: true
     tty: true

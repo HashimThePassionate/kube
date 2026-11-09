@@ -22,7 +22,7 @@ spec:
             mode: 0600
   containers:
   - name: kiada
-    image: luksa/kiada:0.5
+    image: muhammadhashim24/kiada:0.5
     imagePullPolicy: Always
     env:
     - name: QUOTE_URL

@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: kiada
-        image: luksa/kiada:0.8
+        image: muhammadhashim24/kiada:0.8
         imagePullPolicy: IfNotPresent
         env:
         - name: FAIL_AFTER_SECONDS

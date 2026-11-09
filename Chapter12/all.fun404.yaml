@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: server
-    image: luksa/static-http-server:0.1
+    image: muhammadhashim24/static-http-server:0.1
     imagePullPolicy: IfNotPresent
     args:
     - --listen-address=:8080

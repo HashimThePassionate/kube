@@ -19,7 +19,7 @@ spec:
           path: /proc
       containers:
       - name: node-agent
-        image: luksa/node-agent:0.1
+        image: muhammadhashim24/node-agent:0.1
         imagePullPolicy: IfNotPresent
         args:
         - --listen-address

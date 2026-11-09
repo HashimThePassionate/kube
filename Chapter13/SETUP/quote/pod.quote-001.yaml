@@ -26,7 +26,7 @@ spec:
       mountPath: /html
   containers:
   - name: quote-writer
-    image: luksa/quote-writer:0.1
+    image: muhammadhashim24/quote-writer:0.1
     imagePullPolicy: Always
     volumeMounts:
     - name: shared

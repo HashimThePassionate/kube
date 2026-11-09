@@ -22,7 +22,7 @@ spec:
           claimName: db-data
       containers:
       - name: quiz-api
-        image: luksa/quiz-api:0.2
+        image: muhammadhashim24/quiz-api:0.2
         imagePullPolicy: IfNotPresent
         ports:
         - name: http

@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: kiada
-        image: luksa/kiada:0.5
+        image: muhammadhashim24/kiada:0.5
         imagePullPolicy: IfNotPresent
         env:
         - name: QUOTE_URL

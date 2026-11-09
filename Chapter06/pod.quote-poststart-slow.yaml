@@ -18,6 +18,6 @@ spec:
           - |
             apk add fortune && \
             sleep 60 && \
-            curl -O https://luksa.github.io/kiada/book-quotes.txt && \
-            curl -O https://luksa.github.io/kiada/book-quotes.txt.dat && \
+            curl -O https://muhammadhashim24.github.io/kiada/book-quotes.txt && \
+            curl -O https://muhammadhashim24.github.io/kiada/book-quotes.txt.dat && \
             fortune book-quotes.txt > /usr/share/nginx/html/quote
