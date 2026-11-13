@@ -1,0 +1,324 @@
+/* ==========================================================
+   Professional Combined CSS (Terminal Dark Code + Clean Light UI)
+   ========================================================== */
+
+/* Global Settings & Layout */
+body, .markdown-body, .vscode-body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+    line-height: 1.7 !important;
+    color: #1f2328 !important;
+    background-color: #ffffff !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+/* Selection Highlight (Global) */
+::selection {
+    background: #FFFF0066;
+    color: black;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #000000 !important;
+    font-weight: 800;
+    margin-top: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.4em; border-bottom: 3px solid #000000; padding-bottom: 5px; }
+h2 { font-size: 1.8em; border-bottom: 1px solid #e5e5e5; padding-bottom: 5px; }
+h3 { font-size: 1.3em; }
+
+/* Table of Contents (.toc) */
+.toc {
+    margin: 24px 0 32px;
+    border: 1px solid #d8dde3;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f8fafc, #eef2f5);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+.toc summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    color: #111827;
+    cursor: pointer;
+    list-style: none;
+}
+
+.toc summary::-webkit-details-marker { display: none; }
+.toc summary::before {
+    content: "+";
+    display: inline-grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 2px;
+    border: 1px solid #111827;
+    border-radius: 50%;
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.toc[open] summary::before { content: "-"; }
+.toc summary strong { margin-right: auto; font-size: 1.05em; }
+.toc summary span { color: #64748b; font-size: 0.85em; font-weight: 500; }
+.toc > ul { margin: 0; padding: 0 24px 18px 52px; }
+.toc ul ul { margin-top: 4px; padding-left: 22px; }
+.toc li { padding: 3px 0; }
+.toc a { color: #334155; text-decoration: none; }
+.toc a:hover { color: #0969da; text-decoration: underline; }
+
+@media (max-width: 560px) {
+    .toc summary span { display: none; }
+    .toc > ul { padding-left: 42px; padding-right: 16px; }
+}
+
+/* Notes & Warnings (Blockquote) */
+blockquote {
+    background: #f8f9fa;
+    border-left: 5px solid #0969da;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-weight: 500;
+    color: #333;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Inline Code (Chotay boxes ke liye updated styling) */
+code:not(pre code) {
+    background-color: #e2e8f0 !important; /* Thora mazeed clear aur rich gray background */
+    color: #090d16 !important;             /* Mazeed dark text taake high contrast mile */
+    padding: 3px 7px !important;
+    border-radius: 6px !important;
+    border: 1px solid #94a3b8 !important;   /* Thora mazeed prominent border taake box alag dikhe */
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace !important;
+    font-size: 0.9em !important;
+    font-weight: 700 !important;            /* Bold text taake easily highlight ho */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important; /* Halki si depth ke liye shadow */
+}
+
+/* ==========================================================
+   GEMINI STYLE CODE BLOCKS (Outer Box + Bright Label + Inner Box)
+   ========================================================== */
+
+/* Outer Container Box */
+/* Outer Container Box (Halka Gray Background) */
+pre {
+    background-color: #22272e !important; /* Outer area gray ho gaya */
+    color: #ffffff !important;
+    padding: 44px 14px 14px 14px !important; 
+    border-radius: 16px !important;
+    border: 1px solid #30363d !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4) !important;
+    position: relative !important;
+    overflow: auto !important;
+    margin: 24px 0 !important;
+}
+
+
+/* Bright & Bold Language Label (Top-Left Corner) */
+pre::before {
+    content: "CODE";
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 0.8em !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em;
+    color: #ffffff !important; /* Pure white taake halka na lage */
+    text-transform: uppercase;
+}
+
+/* Auto-detect Language Names for Badge */
+pre[class*="yaml"]::before, pre:has(> code.language-yaml)::before { content: "YAML"; }
+pre[class*="json"]::before, pre:has(> code.language-json)::before { content: "JSON"; }
+pre[class*="js"]::before, pre[class*="javascript"]::before, pre:has(> code.language-js)::before, pre:has(> code.language-javascript)::before { content: "JAVASCRIPT"; }
+pre[class*="bash"]::before, pre[class*="sh"]::before, pre:has(> code.language-bash)::before, pre:has(> code.language-sh)::before { content: "BASH"; }
+pre[class*="python"]::before, pre[class*="py"]::before, pre:has(> code.language-python)::before, pre:has(> code.language-py)::before { content: "PYTHON"; }
+pre[class*="dockerfile"]::before, pre:has(> code.language-dockerfile)::before { content: "DOCKERFILE"; }
+pre[class*="html"]::before, pre:has(> code.language-html)::before { content: "HTML"; }
+pre[class*="css"]::before, pre:has(> code.language-css)::before { content: "CSS"; }
+
+/* Custom Scrollbar for Terminal Blocks */
+pre::-webkit-scrollbar { height: 6px; width: 6px; }
+pre::-webkit-scrollbar-thumb { background: #484f58; border-radius: 3px; }
+
+/* Inner Rounded Code Box (Bright Border, Bold Solid White Text) */
+/* Inner Rounded Code Box (Pure Black Background & Proper Overflow) */
+pre code,
+pre[class*="language-"],
+.vscode-highlight code {
+    display: block !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;                  
+    font-size: 15px !important;                   
+    line-height: 1.65 !important;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 10px !important;
+    padding: 16px 20px !important;
+    text-decoration: none !important;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.8) !important;
+    -webkit-font-smoothing: antialiased !important; 
+    -moz-osx-font-smoothing: grayscale !important;
+    overflow-x: auto !important; /* Yeh text/table ko box ke andar scrollable rakhega bahar nahi jane dega */
+    white-space: pre !important; /* Long lines ko wrap hone se rokay ga aur scrollbar dega */
+}
+
+/* Force All Spans, Tokens & Child Elements to be Bold & Pure White */
+pre span,
+pre div,
+pre code *,
+pre [class*="hljs-"],
+pre [class*="token"],
+.vscode-highlight span,
+.hljs *,
+.shiki * {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+/* ==========================================================
+   FIX: Code Selection Styling inside Pre Blocks (Yellow BG, Black Text)
+   ========================================================== */
+pre ::selection,
+pre *::selection,
+code ::selection,
+code::selection {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+}
+
+/* ==========================================================
+   FIX: VS Code Markdown Preview Code Copy Button Styling
+   ========================================================== */
+pre .inline-code-copy-button,
+pre code + button,
+.vscode-highlight > button,
+pre > button,
+.markdown-body pre button,
+[class*="copy"] {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+pre button:hover,
+[class*="copy"]:hover {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+
+pre button:active,
+[class*="copy"]:active {
+    background-color: rgba(255, 255, 255, 0.35) !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================
+   Dynamic & Smart Table Styling using Modern CSS :has() Selector
+   ========================================================== */
+table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+    margin: 25px 0 !important;
+    font-size: 0.95em !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+    border: 2px solid #94a3b8 !important;
+}
+
+th, td {
+    padding: 14px 18px !important;
+    text-align: left !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    border-right: 1px solid #cbd5e1 !important;
+    color: #1e293b !important;
+}
+
+/* Header Styling */
+th {
+    background-color: #0969da !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-size: 0.95em !important;
+    letter-spacing: 0.03em;
+    border-right: 1px solid rgba(255, 255, 255, 0.3) !important;
+    white-space: nowrap !important;
+}
+
+th:last-child, td:last-child {
+    border-right: none !important;
+}
+
+/* ==========================================================
+   CONDITIONAL COLUMN WIDTHS (Dynamic using :has())
+   ========================================================== */
+
+/* 1. Agar table mein 2 columns hon */
+table:has(th:nth-child(2):last-child) th:nth-child(1),
+table:has(th:nth-child(2):last-child) td:nth-child(1) { width: 40% !important; }
+table:has(th:nth-child(2):last-child) th:nth-child(2),
+table:has(th:nth-child(2):last-child) td:nth-child(2) { width: 60% !important; }
+
+/* 2. Agar table mein 3 columns hon (Aapki Kubernetes wali table ke liye exact fix) */
+table:has(th:nth-child(3):last-child) th:nth-child(1),
+table:has(th:nth-child(3):last-child) td:nth-child(1) { width: 35% !important; }
+table:has(th:nth-child(3):last-child) th:nth-child(2),
+table:has(th:nth-child(2):last-child) td:nth-child(2), /* fallback */
+table:has(th:nth-child(3):last-child) td:nth-child(2) { 
+    width: 18% !important; 
+    text-align: center !important; 
+    white-space: nowrap !important; 
+}
+table:has(th:nth-child(3):last-child) th:nth-child(3),
+table:has(th:nth-child(3):last-child) td:nth-child(3) { width: 47% !important; }
+
+/* 3. Agar table mein 4 ya is se zyada columns hon */
+table:has(th:nth-child(4):last-child) th,
+table:has(th:nth-child(4):last-child) td { width: 25% !important; }
+
+/* Table ke andar inline code / text ko beech se tootne se rokne ke liye */
+td code:not(pre code) {
+    white-space: nowrap !important;
+}
+
+/* Alternating Row Colors & Hover */
+tr:nth-child(even) {
+    background-color: #f8fafc !important;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff !important;
+}
+
+tr:last-child td {
+    border-bottom: none !important;
+}
+
+tr:hover {
+    background-color: #e2e8f0 !important;
+}
