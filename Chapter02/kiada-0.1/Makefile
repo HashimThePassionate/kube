@@ -2,7 +2,7 @@
 -include ../../env
 
 IMAGE ?= kiada:0.1
-FULL_IMAGE_TAG = "$(PREFIX)$(IMAGE)"
+FULL_IMAGE_TAG = "muhammadhashim24/$(IMAGE)"
 
 all: push
 

@@ -1,8 +1,8 @@
 -include Makefile.overrides
 -include ../../env
 
-IMAGE ?= init-demo:0.1
-FULL_IMAGE_TAG = "$(PREFIX)$(IMAGE)"
+IMAGE ?= muhammadhashim24/init-demo:0.1
+FULL_IMAGE_TAG = "$(IMAGE)"
 
 all: push
 

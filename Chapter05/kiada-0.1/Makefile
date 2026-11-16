@@ -1,8 +1,8 @@
 -include Makefile.overrides
 -include ../../env
 
-IMAGE ?= kiada:0.1
-FULL_IMAGE_TAG = "$(PREFIX)$(IMAGE)"
+IMAGE ?= muhammadhashim24/kiada:0.1
+FULL_IMAGE_TAG = "$(IMAGE)"
 
 all: push
 
